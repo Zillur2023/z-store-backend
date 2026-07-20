@@ -15,6 +15,11 @@ module.exports = defineConfig({
     workerMode: process.env.MEDUSA_WORKER_MODE as
       "shared" | "worker" | "server",
     redisUrl: process.env.REDIS_URL,
+    // 🔥 cookie কনফিগারেশন এখানে যোগ করুন
+    cookieOptions: {
+      sameSite: "none",
+      secure: true,
+    },
   },
   admin: {
     disable: process.env.DISABLE_MEDUSA_ADMIN === "true",
